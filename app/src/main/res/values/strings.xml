@@ -6,4 +6,6 @@
     <string name="tv_result">Результат</string>
     <string name="_1st">1st</string>
     <string name="_2nd">2nd</string>
+    <string name="reset">Reset</string>
+    <string name="exit">Exit</string>
 </resources>

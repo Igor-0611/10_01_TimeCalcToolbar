@@ -1,17 +1,18 @@
 package com.example.a10_01_timecalctoolbar
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toolbar
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
-private const val s = "@string/app_title"
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -48,6 +49,35 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonDifBTN.setOnClickListener (this)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.resetMenuMain -> {
+                firstOperandET.text.clear()
+                secondOperandET.text.clear()
+                resultTV.text = "Результат"
+                Toast.makeText(
+                    applicationContext,
+                    "Данные очищены",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            R.id.exitMenuMain -> {
+                Toast.makeText(
+                    applicationContext,
+                    "Приложение закрыто",
+                    Toast.LENGTH_LONG
+                ).show()
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onClick(v: View) {
 
         if (firstOperandET.text.isEmpty() || secondOperandET.text.isEmpty()) {
@@ -64,6 +94,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         resultTV.text = result.toString()
+
+        Toast.makeText(
+            applicationContext,
+            "Результат: $result",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     private fun timeToSeconds(timeString: String): Int {
@@ -104,7 +140,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (hours > 0) strOfTime += "$hours h "
         if (minutes > 0) strOfTime += "$minutes m "
         if (seconds > 0) strOfTime += "$seconds s"
-
 
         return strOfTime
     }

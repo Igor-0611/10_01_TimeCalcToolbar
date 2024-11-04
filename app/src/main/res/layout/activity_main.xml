@@ -34,6 +34,7 @@
             android:layout_weight="1"
             android:hint="@string/_1st"
             android:textAlignment="center"
+            android:textColor="@color/darkRed"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -46,6 +47,7 @@
             android:layout_weight="1"
             android:hint="@string/_2nd"
             android:textAlignment="center"
+            android:textColor="@color/darkRed"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -96,7 +98,7 @@
         android:layout_marginEnd="80dp"
         android:text="@string/tv_result"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/darkRed"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
