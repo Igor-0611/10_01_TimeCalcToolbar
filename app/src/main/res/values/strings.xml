@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">10_01_TimeCalcToolbar</string>
+    <string name="app_title">Калькулятор времени</string>
+    <string name="btn_sum">+</string>
+    <string name="btn_dif">-</string>
+    <string name="tv_result">Результат</string>
+    <string name="_1st">1st</string>
+    <string name="_2nd">2nd</string>
+</resources>
